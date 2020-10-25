@@ -8,7 +8,7 @@ public class Player : Creature
     protected override void Start()
     {
         base.characterController = GetComponent<CharacterController>();
-        base.walkSpeed = 2.0f;
+        base.walkSpeed = 6.0f;
     }
 
     // Update is called once per frame

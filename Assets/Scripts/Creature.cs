@@ -10,7 +10,7 @@ public class Creature : MonoBehaviour
     public float turnSmoothTime = 0.12f;
     public float speedSmoothTime = 0.035f;
     public float gravity = 20.0f;
-    public float playerHeight;
+    public float height;
 
     // ref variables 
     float speedSmoothVelocity;
@@ -34,7 +34,8 @@ public class Creature : MonoBehaviour
     {   
         move();
 
-        playerVelocity.y -= gravity * Time.deltaTime;
+        height -= gravity * Time.deltaTime;
+        playerVelocity.y = height;
         characterController.Move(playerVelocity * Time.deltaTime);
     }
 
