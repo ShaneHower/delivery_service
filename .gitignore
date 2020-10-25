@@ -9,7 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-/models_and_materials/
+/[Aa]ssets/models_and_materials/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -60,6 +60,12 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
+
+# meta files
+models_and_materials.meta
+ExampleAssets.meta
+Materials.meta
+polyperfect.meta
 
 # Crashlytics generated file
 crashlytics-build.properties
