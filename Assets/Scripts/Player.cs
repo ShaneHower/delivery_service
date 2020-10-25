@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
 public class Player : Creature
-{   
+{
+    public Transform playerCamera;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -13,6 +15,7 @@ public class Player : Creature
     protected override void Update()
     {
         playerInput();
+        playerMove();
         base.Update();
     }
 
@@ -21,5 +24,10 @@ public class Player : Creature
         // player movement inputs
         base.horizontal = Input.GetAxisRaw("Horizontal");
         base.vertical = Input.GetAxisRaw("Vertical");
+    }
+
+    void playerMove()
+    {
+        base.rotateRef = playerCamera.eulerAngles.y;
     }
 }
