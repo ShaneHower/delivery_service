@@ -6,6 +6,7 @@ public class Creature : MonoBehaviour
 
     // public variables that can be tuned
     protected float walkSpeed;
+    protected float rotateRef;
     public float turnSmoothTime = 0.12f;
     public float speedSmoothTime = 0.035f;
     public float gravity = 20.0f;
@@ -46,7 +47,7 @@ public class Creature : MonoBehaviour
         if (inputDir != Vector2.zero)
         {
             //using atan2 because it deals with the denominator being 0.  Arctan2 returns angle in radians.
-            float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
+            float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + rotateRef;
             // SmoothDampAngle takes current angle and desired angle .  also takes turn smooth time (the amount of seconds it will take to go from the current value to the new value), 
             // and turnSmoothVelocity. ref lets the function modify the value? 
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
