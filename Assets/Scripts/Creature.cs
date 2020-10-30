@@ -2,7 +2,8 @@
 
 public class Creature : MonoBehaviour
 {
-    protected CharacterController characterController;
+    protected CharacterController creatureController;
+    protected Animator creatureAnimator;
 
     // public variables that can be tuned
     protected float walkSpeed;
@@ -36,7 +37,9 @@ public class Creature : MonoBehaviour
 
         height -= gravity * Time.deltaTime;
         playerVelocity.y = height;
-        characterController.Move(playerVelocity * Time.deltaTime);
+        creatureController.Move(playerVelocity * Time.deltaTime);
+
+        animate();
     }
 
     void move()
@@ -56,6 +59,11 @@ public class Creature : MonoBehaviour
         float targetSpeed = walkSpeed * inputMag;
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
         playerVelocity = transform.forward * currentSpeed;
+    }
+
+    protected void animate()
+    {
+        creatureAnimator.SetFloat("is_moving", inputMag);
     }
 }
 
