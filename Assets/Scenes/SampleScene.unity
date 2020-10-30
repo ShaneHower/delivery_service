@@ -332,6 +332,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8987352417269127782, guid: ec9d7d80a3ced5c47994bff028b5b46d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 792a8a0861c9f9649b8eee78a29b85e0, type: 2}
     m_RemovedComponents:
     - {fileID: 8987352417259745029, guid: ec9d7d80a3ced5c47994bff028b5b46d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec9d7d80a3ced5c47994bff028b5b46d, type: 3}
@@ -526,7 +530,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 1.9
   m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1455,7 +1459,7 @@ MonoBehaviour:
   target: {fileID: 1785622487}
   speed: 150
   dstFromTarget: 50
-  smoothTimePos: 0.18
+  smoothTimePos: 0.3
 --- !u!1 &1785622486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1859,24 @@ PrefabInstance:
       objectReference: {fileID: 2100010, guid: 47616bd0cda748d4cbedcfc908506b9d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d26d86c64c0c4bf4bdcfac0095207ab, type: 3}
+--- !u!1 &2054605477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1279668495002901202, guid: 42164d185dda3eb4d8a93dd6a79f4355, type: 3}
+  m_PrefabInstance: {fileID: 2113194897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2054605480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054605477}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 3.8000002, z: 10}
+  m_Center: {x: 0.000007390976, y: 1.9000001, z: 0.050004005}
 --- !u!1001 &2113194897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1991,7 +2013,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 2.7e-44}
+  m_BoundingSphereOverride: {x: -1.0677147e+18, y: -8.221874e-26, z: 4e-45, w: -1.3517774e+23}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
