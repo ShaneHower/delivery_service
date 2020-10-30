@@ -7,7 +7,8 @@ public class Player : Creature
     // Start is called before the first frame update
     protected override void Start()
     {
-        base.characterController = GetComponent<CharacterController>();
+        base.creatureController = GetComponent<CharacterController>();
+        base.creatureAnimator = GetComponent<Animator>();
         base.walkSpeed = 6.0f;
     }
 
@@ -15,7 +16,7 @@ public class Player : Creature
     protected override void Update()
     {
         playerInput();
-        playerMove();
+        setMoveParams();
         base.Update();
     }
 
@@ -26,7 +27,7 @@ public class Player : Creature
         base.vertical = Input.GetAxisRaw("Vertical");
     }
 
-    void playerMove()
+    void setMoveParams()
     {
         base.rotateRef = playerCamera.eulerAngles.y;
     }
