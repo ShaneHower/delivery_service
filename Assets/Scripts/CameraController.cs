@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
 
     public float speed = 150.0f;
     public float dstFromTarget = 50.0f;
-    public float smoothTimePos = 0.18f;
+    public float smoothTimePos = 0.4f;
 
     Vector3 smoothVP;
 
