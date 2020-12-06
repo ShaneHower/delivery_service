@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Collectables: MonoBehaviour
 {
-    Item itemData;
+    Item item;
+    CollectableCache colCache;
 
     // Start is called before the first frame update
     void Start()
     {
-        itemData = GetComponent<Item>();
+        item = GetComponent<Item>();
+        colCache = GetComponentInParent<CollectableCache>();
     }
 
     // Update is called once per frame
@@ -22,10 +22,8 @@ public class Collectables: MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            string itemName = itemData.getName();
-            string itemType = itemData.getType();
-            float itemId = itemData.getId();
-            Debug.Log(itemName + ' ' + itemType + ' ' + itemId);
+            // cache the collected item to populate inventory
+            colCache.cacheCollectable(item);
 
             //populateInventory
             Destroy(this.gameObject);
