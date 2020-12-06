@@ -7,10 +7,10 @@ public class InventoryManager : MonoBehaviour
     GameObject collectables;
     CollectableCache colCache;
 
-    GameObject inventoryCanvas { get { return transform.Find("inventory_canvas").gameObject; } }
+    GameObject inventoryCanvas;
     GameObject inventoryObject;
 
-    public GameObject itemPrefab;
+    GameObject itemPrefab;
     GameObject newItem;
 
     List<Item> inventoryCache = new List<Item>();
@@ -21,7 +21,9 @@ public class InventoryManager : MonoBehaviour
         collectables = GameObject.Find("collectables");
         colCache = collectables.GetComponent<CollectableCache>();
 
+        inventoryCanvas = transform.Find("inventory_canvas").gameObject;
         inventoryObject = inventoryCanvas.transform.Find("inventory").gameObject;
+
         itemPrefab = Resources.Load("ui_prefab\\item") as GameObject;
     }
 
