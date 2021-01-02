@@ -7,6 +7,7 @@ public class Item: MonoBehaviour
     public string itemType;
     public int itemId;
     public string spriteFile;
+    public bool isStackable;
 
     public string getName()
     {
@@ -26,6 +27,11 @@ public class Item: MonoBehaviour
     public string getSprite()
     {
         return spriteFile;
+    }
+
+    public bool getStackable()
+    {
+        return isStackable;
     }
 
     public string printObject()
