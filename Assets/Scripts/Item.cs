@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
-public class Item : MonoBehaviour
+public class Item: MonoBehaviour
 {
     public string itemName;
     public string itemType;
     public int itemId;
+    public string spriteFile;
+    public bool isStackable;
 
     public string getName()
     {
@@ -22,6 +22,21 @@ public class Item : MonoBehaviour
     public string getType()
     {
         return itemType;
+    }
+
+    public string getSprite()
+    {
+        return spriteFile;
+    }
+
+    public bool getStackable()
+    {
+        return isStackable;
+    }
+
+    public string printObject()
+    {
+        return itemId.ToString() + '_' + itemType + '_' + itemName;
     }
 
 }
